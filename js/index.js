@@ -3,6 +3,11 @@ document.getElementById('blog-btn').addEventListener('click', function () {
     window.location.href = "./blog.html"
 });
 
+// clicking blog btn in mobile
+document.getElementById('blog-btn-mbl').addEventListener('click', function () {
+    window.location.href = "./blog.html"
+});
+
 
 // clicking donation btn
 document.getElementById('donation-btn').addEventListener('click', function () {
@@ -35,6 +40,7 @@ document.getElementById('history-btn').addEventListener('click', function () {
 
 // donation fot noakhali 
 document.getElementById('noakhali-donate-btn').addEventListener('click', function () {
+    const noakhaliTitle = document.getElementById("noakhali-title").innerText;
     const mainBalance = getInnerTextById('main-balance');
     const noakhaliBalance = getInnerTextById('noakhali-balance');
     const noakhaliInput = getInputValueById('noakhali-input');
@@ -46,9 +52,28 @@ document.getElementById('noakhali-donate-btn').addEventListener('click', functio
         document.getElementById('noakhali-balance').innerText = newNoakhaliBalance;
         document.getElementById('main-balance').innerText = newMainBalance;
 
+
         document.getElementById('noakhali-input').value = "";
-        
+
         document.getElementById('success-modal').showModal();
+
+        // history 
+        const historySection = document.getElementById('history-section');
+
+        let div = document.createElement('div');
+        div.classList.add('border', 'p-4', 'rounded-xl', 'max-w-screen-xl', 'm-auto');
+        historySection.appendChild(div);
+
+        let h4 = document.createElement('h4');
+        h4.classList.add('text-xl', 'font-medium', 'mb-3');
+        h4.innerText = `${noakhaliInput} Taka is Donated for ${noakhaliTitle}`;
+        div.appendChild(h4);
+
+        let p = document.createElement('p');
+        p.classList.add('font-light', 'text-sm');
+        p.innerText = "Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time)";
+
+        div.appendChild(p);
 
     }
     else {
@@ -72,7 +97,7 @@ document.getElementById('feni-donate-btn').addEventListener('click', function ()
         document.getElementById('main-balance').innerText = newMainBalance;
 
         document.getElementById('feni-input').value = "";
-        
+
         document.getElementById('success-modal').showModal();
 
     }
@@ -97,7 +122,7 @@ document.getElementById('quota-donate-btn').addEventListener('click', function (
         document.getElementById('main-balance').innerText = newMainBalance;
 
         document.getElementById('quota-input').value = "";
-        
+
         document.getElementById('success-modal').showModal();
 
     }
