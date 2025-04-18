@@ -58,6 +58,7 @@ document.getElementById('noakhali-donate-btn').addEventListener('click', functio
         document.getElementById('success-modal').showModal();
 
         // history 
+        let newDate = new Date();
         const historySection = document.getElementById('history-section');
 
         let div = document.createElement('div');
@@ -71,7 +72,7 @@ document.getElementById('noakhali-donate-btn').addEventListener('click', functio
 
         let p = document.createElement('p');
         p.classList.add('font-light', 'text-sm');
-        p.innerText = "Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time)";
+        p.innerText = `Date: ${newDate.toString()}`;
 
         div.appendChild(p);
 
@@ -85,6 +86,7 @@ document.getElementById('noakhali-donate-btn').addEventListener('click', functio
 
 // donation for feni
 document.getElementById('feni-donate-btn').addEventListener('click', function () {
+    const feniTitle = document.getElementById('feni-title').innerText;
     const mainBalance = getInnerTextById('main-balance');
     const feniBalance = getInnerTextById('feni-balance');
     const feniInput = getInputValueById('feni-input');
@@ -100,6 +102,26 @@ document.getElementById('feni-donate-btn').addEventListener('click', function ()
 
         document.getElementById('success-modal').showModal();
 
+
+        // history 
+        let newDate = new Date();
+        const historySection = document.getElementById('history-section');
+
+        let div = document.createElement('div');
+        div.classList.add('border', 'p-4', 'rounded-xl', 'max-w-screen-xl', 'm-auto');
+        historySection.appendChild(div);
+
+        let h4 = document.createElement('h4');
+        h4.classList.add('text-xl', 'font-medium', 'mb-3');
+        h4.innerText = `${feniInput} Taka is Donated for ${feniTitle}`;
+        div.appendChild(h4);
+
+        let p = document.createElement('p');
+        p.classList.add('font-light', 'text-sm');
+        p.innerText = `Date: ${newDate.toString()}`;
+
+        div.appendChild(p);
+
     }
     else {
         document.getElementById('fail-modal').showModal();
@@ -110,6 +132,7 @@ document.getElementById('feni-donate-btn').addEventListener('click', function ()
 
 // donation for quota
 document.getElementById('quota-donate-btn').addEventListener('click', function () {
+    const quotaTitle = document.getElementById('quota-title').innerText;
     const mainBalance = getInnerTextById('main-balance');
     const quotaBalance = getInnerTextById('quota-balance');
     const quotaInput = getInputValueById('quota-input');
@@ -124,6 +147,26 @@ document.getElementById('quota-donate-btn').addEventListener('click', function (
         document.getElementById('quota-input').value = "";
 
         document.getElementById('success-modal').showModal();
+
+
+        // history 
+        let newDate = new Date();
+        const historySection = document.getElementById('history-section');
+
+        let div = document.createElement('div');
+        div.classList.add('border', 'p-4', 'rounded-xl', 'max-w-screen-xl', 'm-auto');
+        historySection.appendChild(div);
+
+        let h4 = document.createElement('h4');
+        h4.classList.add('text-xl', 'font-medium', 'mb-3');
+        h4.innerText = `${quotaInput} Taka is Donated for ${quotaTitle}`;
+        div.appendChild(h4);
+
+        let p = document.createElement('p');
+        p.classList.add('font-light', 'text-sm');
+        p.innerText = `Date: ${newDate.toString()}`;
+
+        div.appendChild(p);
 
     }
     else {
